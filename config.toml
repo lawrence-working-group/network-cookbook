@@ -1,0 +1,177 @@
+baseURL = "/"
+theme = "pure"
+title = "Network Cookbook"
+defaultContentLanguage = "zh-CN"
+footnoteReturnLinkContents = "↩"
+hasCJKLanguage = true
+paginate = 7.0
+enableEmoji = true
+googleAnalytics = ""
+
+[permalinks]
+posts = "/:year/:month/:filename/"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[outputFormats]
+
+  [outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "searchindex"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+home = [
+  "HTML",
+  "RSS",
+  "SearchIndex"
+]
+
+[sitemap]
+changefreq = "monthly"
+filename = "sitemap.xml"
+priority = 0.5
+
+[menu]
+
+  [[menu.main]]
+  identifier = "home"
+  name = "Home"
+  title = "Home"
+  url = "/"
+  weight = 1.0
+
+  [[menu.main]]
+  identifier = "archives"
+  name = "Archives"
+  title = "Archives"
+  url = "/posts"
+  weight = 2.0
+
+  [[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  title = "Categories"
+  url = "/categories"
+  weight = 3.0
+
+  [[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  title = "Tags"
+  url = "/tags"
+  weight = 4.0
+
+  [[menu.main]]
+  identifier = "about"
+  name = "About"
+  title = "About"
+  url = "/about"
+  weight = 5.0
+
+[params]
+since = 2017.0
+dateFormatToUse = "2006-01-02"
+enablePostCopyright = false
+mainSections = [
+  "posts"
+]
+enableMathJax = true
+sidebar = "right"
+widgets = [
+  "board",
+  "category",
+  "tag",
+  "recent_posts"
+]
+
+  [params.menuIcons]
+  enable = true
+  home = "icon-home-fill"
+  archives = "icon-archives-fill"
+  categories = "icon-folder"
+  tags = "icon-tags"
+  repository = "icon-project"
+  books = "icon-book-fill"
+  links = "icon-friendship"
+  about = "icon-cup-fill"
+
+  [params.profile]
+  enabled = false
+  avatar = "avatar.png"
+  author = "xiaoheiAh"
+  author_title = "author title"
+  author_description = "Good Good Study, Day Day Up~"
+  location = "Shanghai, China"
+  follow = "https://github.com/lawrence-working-group/network-cookbook"
+
+    [params.profile.social]
+    link_tooltip = true
+
+      [params.profile.social.links]
+      github = "https://github.com/lawrence-working-group/network-cookbook"
+      rss = "/index.xml"
+
+  [params.site]
+  title = "Hugo"
+  favicon = "favicon.ico"
+  board = "<p></p>"
+
+    [params.site.logo]
+    enabled = false
+    width = 40.0
+    height = 40.0
+    url = "favicon.ico"
+
+  [params.share]
+  enable = true
+  sites = "weibo,qq,wechat,facebook,twitter"
+  mobile_sites = "weibo,qq,qzone"
+
+  [params.comment]
+  disqus = ""
+
+    [params.comment.gitalk]
+
+    [params.comment.valine]
+    placeholder = ""
+    avatar = "mm"
+    meta = "nick,mail"
+    pageSize = 10.0
+    visitor = false
+
+  [params.donate]
+  enable = false
+
+    [params.donate.wechatpay]
+    qrcode = "donate/wechatpayimg.png"
+    title = "微信支付"
+
+    [params.donate.alipay]
+    qrcode = "donate/alipayimg.png"
+    title = "支付宝"
+
+  [params.pv]
+
+    [params.pv.busuanzi]
+    enable = false
+
+    [params.pv.leancloud]
+    enable = false
+
+  [params.postCount]
+  enable = true
+  wordcount = true
+  min2read = true
+
+  [params.config]
+  layout = "main-center"
+  excerpt_link = "Read More"
+  toc = true
+
+  [params.search]
+  enable = true
