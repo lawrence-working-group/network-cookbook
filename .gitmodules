@@ -1,0 +1,6 @@
+[submodule "themes/mainroad"]
+	path = themes/mainroad
+	url = https://github.com/vimux/mainroad
+[submodule "themes/pure"]
+	path = themes/pure
+	url = https://github.com/xiaoheiAh/hugo-theme-pure.git
