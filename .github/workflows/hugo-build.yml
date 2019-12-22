@@ -23,5 +23,5 @@ jobs:
       - name: Build
         run: |
           set -Eeuo pipefail
-          hugo build
+          hugo
           ls -alh public/
