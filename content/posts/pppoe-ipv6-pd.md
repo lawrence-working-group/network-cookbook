@@ -1,6 +1,6 @@
 +++
 title = "PPPoE 的 IPv6 前缀下发（Prefix-delegation）配置"
-date = "2019-12-22"
+date = "2019-12-23"
 +++
 
 # PPPoE 的 IPv6 前缀下发（Prefix-delegation）配置
