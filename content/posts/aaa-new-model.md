@@ -1,7 +1,7 @@
 +++
 title = "AAA 新模型配置"
 date = "2019-12-22"
-tags = ["cisco"]
+tags = ["思科", "AAA"]
 +++
 
 ## Cisco IOS/IOS XE

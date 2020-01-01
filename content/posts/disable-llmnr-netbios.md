@@ -1,7 +1,7 @@
 +++
 title = "在 Windows 和 Linux 系统上禁用 LLMNR 以及 NetBIOS"
-date = 2019-12-30T02:46:19-05:00
-tags = ["security", "llmnr", "netbios", "windows", "linux"]
+date = "2019-12-30"
+tags = ["安全","Windows"]
 +++
 
 ## 什么是 LLMNR

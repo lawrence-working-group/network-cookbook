@@ -1,7 +1,7 @@
 +++
 title = "远程配置时防止把自己锁在外面"
 date = "2019-12-22"
-tags = ["cisco"]
+tags = ["思科"]
 +++
 
 ## 适用于 Cisco IOS

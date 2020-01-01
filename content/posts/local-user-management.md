@@ -1,7 +1,7 @@
 +++
 title = "本地用户的配置"
 date = "2019-12-22"
-tags = ["cisco", "user"]
+tags = ["思科", "用户管理"]
 +++
 
 ## 适用于 Cisco IOS/IOS XE

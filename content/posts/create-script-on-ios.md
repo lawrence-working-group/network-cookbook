@@ -1,7 +1,7 @@
 +++
 title = "在思科 IOS 设备上创建命令脚本"
 date = "2019-12-30"
-tags = ["cisco", "script"]
+tags = ["思科", "TCL"]
 +++
 
 由于经典 IOS 没有提供类似 JUNOS 的 commit 机制，任何配置指令都会立即生效，这使得调整接口 VRF、设置路由协议 `passive-interface default` 等配置可能产生破坏性影响，例如中断当前的终端会话等。
