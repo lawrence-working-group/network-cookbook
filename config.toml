@@ -1,4 +1,4 @@
-baseURL = "https://networkcookbook.com/"
+baseURL = "/"
 theme = "pure"
 title = "Network Cookbook"
 defaultContentLanguage = "zh"
