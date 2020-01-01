@@ -1,7 +1,7 @@
-baseURL = "/"
+baseURL = "https://networkcookbook.com/"
 theme = "pure"
 title = "Network Cookbook"
-defaultContentLanguage = "zh-CN"
+defaultContentLanguage = "zh"
 footnoteReturnLinkContents = "↩"
 hasCJKLanguage = true
 paginate = 7.0
@@ -103,9 +103,9 @@ widgets = [
   [params.profile]
   enabled = false
   avatar = "avatar.png"
-  author = "xiaoheiAh"
-  author_title = "author title"
-  author_description = "Good Good Study, Day Day Up~"
+  author = "Lawrence Workgroup"
+  author_title = "Lawrence Workgroup"
+  author_description = "Lawrence Workgroup"
   location = "Shanghai, China"
   follow = "https://github.com/lawrence-working-group/network-cookbook"
 
@@ -117,7 +117,7 @@ widgets = [
       rss = "/index.xml"
 
   [params.site]
-  title = "Hugo"
+  title = "Network Cookbook"
   favicon = "favicon.ico"
   board = "<p></p>"
 
