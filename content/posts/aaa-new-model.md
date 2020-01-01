@@ -1,9 +1,8 @@
 +++
 title = "AAA 新模型配置"
 date = "2019-12-22"
+tags = ["cisco"]
 +++
-
-# AAA 新模型配置
 
 ## Cisco IOS/IOS XE
 
@@ -12,7 +11,7 @@ date = "2019-12-22"
 
 完成上述两步后，在配置模式输入以下命令：
 
-```
+```console
 aaa new-model
 aaa authentication login default local
 aaa authorization console
