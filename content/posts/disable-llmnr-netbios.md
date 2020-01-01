@@ -50,7 +50,7 @@ LLMNR=no
 
 ### Linux 禁用方法
 
-Linux 系统中，`nmbd` 服务会相应 NetBIOS 包。如果需要关闭 NetBIOS，可以编辑 `smb.conf` 文件。该文件在基于 Debian 的系统上位置为 `/etc/samba/smb.conf`。在该文件中，添加或修改如下行：
+Linux 系统下, [Samba](https://zh.wikipedia.org/wiki/Samba) （提供了许多 Windows 相关的服务实现）中的 [`nmbd` 服务](https://www.samba.org/samba/docs/current/man-html/nmbd.8.html)会响应 NetBIOS 包。如果需要关闭 NetBIOS，可以编辑 `smb.conf` 文件。该文件在基于 Debian 的系统上位置为 `/etc/samba/smb.conf`。在该文件中，添加或修改如下行：
 
 ```conf
 disable netbios = yes
