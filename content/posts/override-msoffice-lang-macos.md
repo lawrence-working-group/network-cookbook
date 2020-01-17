@@ -1,7 +1,7 @@
 +++
 title = "强制 macOS 上的 Microsoft Office 套件使用指定语言（与系统语言不同）"
 date = "2020-01-17"
-tags = ["思科", "AAA"]
+tags = ["macOS", "Microsoft Office", "i18n"]
 +++
 
 命令行/终端里输入这样几条即可
