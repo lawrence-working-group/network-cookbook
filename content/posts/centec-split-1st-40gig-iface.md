@@ -21,3 +21,16 @@ write
 reload
 y
 ```
+
+重启后查看接口状态：`show interface status`，有如下输出
+
+```
+Port        Status     Duplex  Speed    Mode    Type                    Description
+------------------------------------------------------------------------------------------
+eth-0-1/1   up         a-full  a-10000  ACCESS  10GBASE_SR
+eth-0-1/2   down       auto    auto     ACCESS  Unknown
+eth-0-1/3   down       auto    auto     ACCESS  Unknown
+eth-0-1/4   down       auto    auto     ACCESS  Unknown
+```
+
+至此，接口一分四完成。
