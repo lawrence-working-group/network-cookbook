@@ -1,4 +1,8 @@
-+++ title = "为 VyOS 配置 Cymru BGP Fullbogon 会话" date = "2020-02-25" tags = ["VyOS", "BGP"] +++
++++
+title = "为 VyOS 配置 Cymru BGP Fullbogon 会话"
+date = "2020-02-25"
+tags = ["VyOS", "BGP"]
++++
 
 [Cymru](https://www.team-cymru.com/bogon-reference-bgp.html) 通过 BGP 分发动态的 Bogon IP 列表。其官网提供了许多[示例配置](https://www.team-cymru.com/bgp-examples.html)。
 本文基本上只是把示例配置翻译到 VyOS 语法。
