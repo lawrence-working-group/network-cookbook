@@ -62,7 +62,7 @@ ip nat settings interface-overload block port udp 5060
 ip nat inside source static tcp <内网目标 IP> <内网目标端口> <公网 IP> <公网端口> [vrf <VRF 名称>] extendable
 ```
 
-不过注意这种方法必须要内网设备返回的数据包经过当前路由器的 inside 端口。Linux 下面我们可以在 Source NAT 之后立即做一次 Destination NAT 来实现类似应用层端口转发的效果；IOS XE 上就不能这么做了。
+不过注意这种方法必须要内网设备返回的数据包经过当前路由器的 inside 端口。Linux 下面我们可以在入站方向 Destination NAT，出站方向 Source NAT (masquerade) 来实现类似应用层端口转发的效果；IOS XE 上就不能这么做了。
 
 ### 1:1 NAT
 
