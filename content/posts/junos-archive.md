@@ -1,7 +1,7 @@
 +++
 title = "JUNOS Archive - GitHub Bridge"
 date = "2020-05-16"
-tags = ["Juniper", “JUNOS"]
+tags = ["Juniper", "JUNOS"]
 +++
 
 ## JUNOS Archive - GitHub Bridge
