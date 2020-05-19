@@ -1,7 +1,7 @@
 +++
 title = "交换机上的以太网链路聚合配置"
 date = "2020-05-19"
-tags = ["新华三", "交换机", "链路聚合", "LACP"]
+tags = ["新华三", "交换机", "链路聚合", "LACP", "瞻博", "Juniper", "思科", "Cisco", "Junos", "IOS"]
 +++
 
 本文只介绍 LACP 的聚合方式，如无特殊要求，不应当使用静态聚合。因为静态聚合配置下，接口是否在聚合组中被选中依赖的是接口的 line protocol 状态，在连接了一些不识别不处理 LACP 数据包的网络设备时，设备两侧的接口状态可能不同步，造成部分链路的流量被丢弃。
@@ -64,10 +64,6 @@ LACP 边缘接口的使用场景：交换机与服务器等终端设备相连，
 1. `display link-aggregation verbose` 命令用来显示已有聚合接口所对应聚合组的详细信息。
 1. `display link-aggregation member-port <物理接口类型和编号>` 命令用来查询物理端口属于哪个链路聚合组的的详细信息。
 
-### 参考资料
-- [《H3C - 以太网链路聚合配置》](https://www.h3c.com/cn/d_201912/1252416_30005_0.htm)
-- [《H3C - 以太网链路聚合命令》](https://www.h3c.com/cn/d_201912/1252029_30005_0.htm)
-
 ## Cisco IOS
 
 ```
@@ -85,7 +81,7 @@ interface Port-channel1
  speed nonegotiate
 ```
 
-## JunOS
+## Juniper Junos
 
 首先我们创建出所需数量的链路聚合虚拟端口（`aeN`），并把相应的物理端口加入相应的虚拟端口组：
 
@@ -107,3 +103,10 @@ set interfaces ae0.0 vlan-id 1
 ```
 
 注意 JunOS 在 `aeN` 没有配置 `unit 0` 的情况下不会启动 LACP 握手，端口会始终显示为 down。
+
+### 参考资料
+- [《H3C - 以太网链路聚合配置》](https://www.h3c.com/cn/d_201912/1252416_30005_0.htm)
+- [《H3C - 以太网链路聚合命令》](https://www.h3c.com/cn/d_201912/1252029_30005_0.htm)
+- [Cisco - Link Aggregation Control Protocol (LACP) (802.3ad) for Gigabit Interfaces](https://www.cisco.com/c/en/us/td/docs/ios/12_2sb/feature/guide/gigeth.html)
+- [Cisco - Catalyst 6500 Release 15.0SY Software Configuration Guide - EtherChannels](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/15-0SY/configuration/guide/15_0_sy_swcg/etherchannel.html)
+- [Juniper - TechLibrary - Junos OS - Aggregated Ethernet Interfaces](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/switches-interface-aggregated.html)
