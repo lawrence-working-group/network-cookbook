@@ -64,6 +64,46 @@ LACP 边缘接口的使用场景：交换机与服务器等终端设备相连，
 1. `display link-aggregation verbose` 命令用来显示已有聚合接口所对应聚合组的详细信息。
 1. `display link-aggregation member-port <物理接口类型和编号>` 命令用来查询物理端口属于哪个链路聚合组的的详细信息。
 
-## 参考资料
+### 参考资料
 - [《H3C - 以太网链路聚合配置》](https://www.h3c.com/cn/d_201912/1252416_30005_0.htm)
 - [《H3C - 以太网链路聚合命令》](https://www.h3c.com/cn/d_201912/1252029_30005_0.htm)
+
+## Cisco IOS
+
+```
+interface GigabitEthernet0/51
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+interface GigabitEthernet0/52
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ speed nonegotiate
+```
+
+## JunOS
+
+首先我们创建出所需数量的链路聚合虚拟端口（`aeN`），并把相应的物理端口加入相应的虚拟端口组：
+
+```
+set chassis aggregated-devices ethernet device-count 1
+delete interfaces ge-0/0/1
+delete interfaces ge-0/0/2
+set interfaces ge-0/0/1 gigether-options 802.3ad ae0
+set interfaces ge-0/0/2 gigether-options 802.3ad ae0
+```
+
+然后设置 LACP 参数：
+
+```
+# set interfaces ae0 mtu 1522
+set interfaces ae0 aggregated-ether-options lacp active
+set interfaces ae0 aggregated-ether-options lacp periodic fast
+set interfaces ae0.0 vlan-id 1
+```
+
+注意 JunOS 在 `aeN` 没有配置 `unit 0` 的情况下不会启动 LACP 握手，端口会始终显示为 down。
