@@ -28,3 +28,19 @@ tags = ["SSH"]
     ```
 
 4. 在不退出当前会话的情况下，使用另一个 ssh 会话尝试与远程设备进行用户认证。
+
+## Cisco ASA
+1. 以 RFC 4716 格式输出现有 SSH 公钥
+    ```
+    ssh-keygen -e -f ~/.ssh/id_rsa.pub
+    ```
+
+2. 在 ASA 配置界面输入以下命令，然后粘贴前一条输出的公钥，结束后换行输入 quit，完成公钥配置。
+    ```
+    ciscoasa(config)# username <username> attributes
+    ciscoasa(config-username)# ssh authentication pkf
+    ```
+
+3. ASA 命令行提示：`INFO: Import of an SSH public key formatted file completed successfully.`
+
+4. 在不退出当前会话的情况下，使用另一个 ssh 会话尝试与远程设备进行用户认证，并保存当前配置。
