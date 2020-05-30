@@ -1,7 +1,7 @@
 +++
 title = "思科设备的主机名和域名设置"
 date = "2019-12-22"
-tags = ["思科"]
+tags = ["思科 Cisco"]
 +++
 
 ## Cisco IOS，IOS XE

@@ -1,7 +1,7 @@
 +++
 title = "PPPoE 的 IPv6 前缀下发（Prefix-delegation）配置"
 date = "2019-12-23"
-tags = ["思科", "IPv6", "PPPoE", "DHCPv6-PD"]
+tags = ["思科 Cisco", "IPv6", "PPPoE", "DHCPv6-PD"]
 +++
 
 在以太网环境下，DHCPv6-PD 比较容易配置和理解，而在 PPPoE 环境中，需要在 Dialer 接口配置中添加如下指令
