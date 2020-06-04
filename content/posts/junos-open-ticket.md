@@ -15,4 +15,9 @@ request support information | save /var/tmp/rsi.log
 file archive compress source /var/log/* destination /var/tmp/rsi-log.tgz
 ```
 
-吧 `rsi.log` 和 `rsi-log.tgz` 提交 JNCIE 或 代理商
+将 `rsi.log` 和 `rsi-log.tgz` 提交给 JNCIE 或 代理商
+
+## 参考
+
+- <https://www.juniper.net/documentation/en_US/junos/topics/task/configuration/sftp-server-configuration.html>
+- <https://www.juniper.net/documentation/en_US/junos/topics/reference/command-summary/request-support-information.html>
