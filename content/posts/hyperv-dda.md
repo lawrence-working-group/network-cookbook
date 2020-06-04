@@ -98,7 +98,7 @@ Mount-VMHostAssignableDevice -LocationPath $locationpath
 
 然后在设备管理器里重新启用设备。
 
-## 例子；CSR1000v 16.12
+## 例子: CSR1000v 16.12
 
 ```
 UplinkRouter#sh platform software vnic-if database
