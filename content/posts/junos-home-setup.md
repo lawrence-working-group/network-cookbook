@@ -118,12 +118,16 @@ set security nat source rule-set trust-to-untrust rule source-nat-rule then sour
 ## Full Cone （注意和端口映射不同，这里的 Full Cone 仍然是动态生成的规则）
 set security nat source interface port-overloading off
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit any-remote-host
+set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat max-session-number 65536
 ## Restricted Cone
 set security nat source interface port-overloading off
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit target-host
+set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat max-session-number 65536
 ## Port-restricted Cone
 set security nat source interface port-overloading off
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit target-host-port
+set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat max-session-number 65536
+
 ```
 
 ## WAN 设置
