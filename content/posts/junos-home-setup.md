@@ -113,6 +113,11 @@ set security nat source rule-set trust-to-untrust from zone trust
 set security nat source rule-set trust-to-untrust to zone untrust
 set security nat source rule-set trust-to-untrust rule source-nat-rule match source-address 0.0.0.0/0
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface
+
+# Port-restricted cone NAT
+set security nat source interface port-overloading off
+set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit any-remote-host
+set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat inactivity-timeout 600
 ```
 
 ## WAN 设置
