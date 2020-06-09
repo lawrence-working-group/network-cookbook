@@ -114,10 +114,16 @@ set security nat source rule-set trust-to-untrust to zone untrust
 set security nat source rule-set trust-to-untrust rule source-nat-rule match source-address 0.0.0.0/0
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface
 
-# Port-restricted cone NAT
+# NAT 类型（三个当中选一个，不写的话默认 symmetric）
+## Full Cone （注意和端口映射不同，这里的 Full Cone 仍然是动态生成的规则）
 set security nat source interface port-overloading off
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit any-remote-host
-set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat inactivity-timeout 600
+## Restricted Cone
+set security nat source interface port-overloading off
+set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit target-host
+## Port-restricted Cone
+set security nat source interface port-overloading off
+set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit target-host-port
 ```
 
 ## WAN 设置
