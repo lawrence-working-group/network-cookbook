@@ -149,6 +149,7 @@ set interfaces pp0 unit 0 pppoe-options underlying-interface ge-0/0/0.0
 set interfaces pp0 unit 0 pppoe-options idle-timeout 0
 set interfaces pp0 unit 0 pppoe-options auto-reconnect 5
 set interfaces pp0 unit 0 pppoe-options client
+set interfaces pp0 unit 0 pppoe-options ignore-eol-tag
 set interfaces pp0 unit 0 family inet mtu 1492
 set interfaces pp0 unit 0 family inet negotiate-address
 set routing-options static route 0.0.0.0/0 next-hop pp0.0
