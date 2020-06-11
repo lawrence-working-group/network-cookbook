@@ -9,25 +9,27 @@ tags = ["Windows", "Hyper-V"]
 首先我们需要获得接口的名字：
 
 ```powershell
-PS C:\Windows\system32> Get-VMNetworkAdapterVlan -VmName "CSR1000v"
+PS C:\Windows\system32> Get-VMNetworkAdapterVlan -VmName "Linux"
 
 VMName   VMNetworkAdapterName Mode     VlanList
 ------   -------------------- ----     --------
-CSR1000v Network Adapter      Untagged
+Linux    Network Adapter      Untagged
 ```
 
 然后设置这个接口为 trunk 接口：
 
 ```powershell
-PS C:\Windows\system32> Set-VmNetworkAdapterVlan -VmName "CSR1000v" -VmNetworkAdapterName "Network Adapter" -Trunk -NativeVlanId 0 -AllowedVlanIdList "1-4094"
+PS C:\Windows\system32> Set-VmNetworkAdapterVlan -VmName "Linux" -VmNetworkAdapterName "Network Adapter" -Trunk -NativeVlanId 0 -AllowedVlanIdList "1-4094"
 ```
 
 最后验证配置：
 
 ```powershell
-PS C:\Windows\system32> Get-VMNetworkAdapterVlan -VmName "CSR1000v"
+PS C:\Windows\system32> Get-VMNetworkAdapterVlan -VmName "Linux"
 
 VMName   VMNetworkAdapterName Mode  VlanList
 ------   -------------------- ----  --------
-CSR1000v Network Adapter      Trunk 0,1-4094
+Linux    Network Adapter      Trunk 0,1-4094
 ```
+
+注：Cisco CSR1000v 和这个功能一起用会有一些鬼故事，不建议这么配置。
