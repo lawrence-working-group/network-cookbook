@@ -32,4 +32,11 @@ VMName   VMNetworkAdapterName Mode  VlanList
 Linux    Network Adapter      Trunk 0,1-4094
 ```
 
+如果之后要改回来，直接在 GUI 上改可能会报错。要先用 PowerShell 把接口设成 Untagged 再设置 Access：
+
+```powershell
+Set-VmNetworkAdapterVlan -VmName "Linux" -VmNetworkAdapterName "Network Adapter" -Untagged
+Set-VmNetworkAdapterVlan -VmName "Linux" -VmNetworkAdapterName "Network Adapter" -Access -VlanId 100
+```
+
 注：Cisco CSR1000v 和这个功能一起用会有一些鬼故事，不建议这么配置。
