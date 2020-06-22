@@ -8,6 +8,11 @@ tags = ["JunOS"]
 
 准备一个容量小于等于 4GB 的 U 盘，建立 MBR 分区表（一定要有），创建一个 FAT32 分区并格式化。把系统镜像直接装入分区根目录。如果找不到这样的 U 盘的话，准备一个 TFTP 服务器和充足的时间也可以。
 
+如果目标系统存储空间不足，请事先[清理存储](https://www.juniper.net/documentation/en_US/junos/topics/task/troubleshooting/system-storage-cleanup-qfx-series.html)：
+```
+request system storage cleanup
+```
+
 # 更新系统
 
 ## 从正常工作的 JunOS 更新
