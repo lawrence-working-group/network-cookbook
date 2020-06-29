@@ -1,3 +1,6 @@
 {
-  "fenced-code-language": false
+  "fenced-code-language": false,
+  "single-title": false,
+  "line-length": false,
+  "no-inline-html": false
 }

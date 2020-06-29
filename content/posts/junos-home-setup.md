@@ -6,20 +6,20 @@ tags = ["JunOS"]
 
 # 恢复出厂设置
 
-如果登录不了，可能需要[重置 root 密码](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/recovering-root-password.html) 或者从 loader 安装系统以格式化硬盘。
+如果登录不了，可能需要 [重置 root 密码](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/recovering-root-password.html) 或者从 loader 安装系统以格式化硬盘。
 
 进入系统以后，使用
 
 ```shell
 request system zeroize
 ```
- 
+
 恢复出厂设置。
- 
+
 # 设置 root 密码
- 
+
 设备启动以后，使用默认用户名 `root` 空密码登录，然后：
- 
+
 ```shell
 root@Amnestic% cli
 root@Amnestic> configure
@@ -127,7 +127,6 @@ set security nat source rule-set trust-to-untrust rule source-nat-rule then sour
 set security nat source interface port-overloading off
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat permit target-host-port
 set security nat source rule-set trust-to-untrust rule source-nat-rule then source-nat interface persistent-nat max-session-number 65536
-
 ```
 
 ## WAN 设置
@@ -203,3 +202,8 @@ show ppp interface pp0.0 extensive
 show log pppoe_log
 show log pppd
 ```
+
+# 参考资料
+
+- How to configure SRX device as DDNS client and Destination NAT on Dynamic Untrust IP?
+  <br><https://forums.juniper.net/t5/SRX-Services-Gateway/How-to-configure-SRX-device-as-DDNS-client-and-Destination-NAT/td-p/119650>

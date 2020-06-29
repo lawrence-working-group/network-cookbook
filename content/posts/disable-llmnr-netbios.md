@@ -16,7 +16,7 @@ NetBIOS（网络基本输入输出系统）是一种目前大多基于 TCP/IP �
 
 LLMNR 客户端（请求者）会认为应答是权威的，所以当有客户尝试解析域名的时候，恶意节点可以返回错误信息以至于客户端认为恶意节点的 IP 是域名对应的 IP，或者解析出不存在的 IP。由此攻击又可展开 MITM 以及 replay 等攻击。
 
-具体的攻击实例可以参考文章[《NetBIOS名称欺骗和LLMNR欺骗》](https://www.jianshu.com/p/a22dd51ce27a)。该文章展示了使用 Kali 工具 [Reponder](https://github.com/SpiderLabs/Responder) 进行 LLMNR 和 NetBIOS 欺骗。
+具体的攻击实例可以参考文章[《NetBIOS 名称欺骗和 LLMNR 欺骗》](https://www.jianshu.com/p/a22dd51ce27a)。该文章展示了使用 Kali 工具 [Reponder](https://github.com/SpiderLabs/Responder) 进行 LLMNR 和 NetBIOS 欺骗。
 
 ## LLMNR
 
@@ -46,7 +46,7 @@ LLMNR=no
 
 在控制面板中依次打开：
 
-> 网络和Internet -> 网络连接 -> 右键想要更改的网卡 -> 选择 “属性” -> 点击 “Internet 协议版本 4 (TCP/IPv4)” -> 点击属性属性 -> 点击高级
+> 网络和 Internet -> 网络连接 -> 右键想要更改的网卡 -> 选择 “属性” -> 点击 “Internet 协议版本 4 (TCP/IPv4)” -> 点击属性属性 -> 点击高级
 
 ### Linux 禁用方法
 

@@ -1,7 +1,7 @@
 +++
 title = "清理网络设备命令历史"
 date = "2020-05-22"
-tags = ["RouterOS", "Mikrotik", "cisco", "IOS", "命令历史"]
+tags = ["RouterOS", "Mikrotik", "Cisco", "IOS", "命令历史"]
 +++
 
 ## RouterOS

@@ -1,7 +1,7 @@
 +++
 title = "Cisco IOS XE NAT 基础"
 date = "2020-05-06"
-tags = ["cisco", "IOS XE", "NAT"]
+tags = ["Cisco", "IOS XE", "NAT"]
 +++
 
 开始之前，建议先把这些打上：

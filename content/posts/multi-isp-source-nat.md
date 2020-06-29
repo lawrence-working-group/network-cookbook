@@ -1,7 +1,7 @@
 +++
 title = "多 ISP 环境下的源地址 NAT/PAT 配置"
 date = "2020-02-10"
-tags = ["cisco", "NAT", "route-map"]
+tags = ["Cisco", "NAT", "route-map"]
 +++
 
 经常遇到多个一个路由器上有多个 ISP 的互联网访问，需要使得从不同接口流出的流量源地址进行地址转换（NAT）。
