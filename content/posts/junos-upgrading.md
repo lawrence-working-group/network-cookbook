@@ -24,7 +24,7 @@ request system storage cleanup
 
 注意：SRX300/500 系列防火墙上请不要快速插拔 USB 设备，建议冷插拔。
 
-```shell
+```
 root@% mount -t msdosfs /dev/da1s1 /mnt
 root@% cp /mnt/junos-srxsme-18.2R3-S2.9.tgz /var/tmp
 root@% umount /mnt
@@ -38,7 +38,7 @@ JunOS 文档会告诉你说 `file copy` 命令支持 TFTP，但是其实它不�
 
 TFTP 传输时请稍安勿躁，传输系统镜像大约需要 30 分钟。
 
-```shell
+```
 root@% cd /var/tmp
 root@% tftp 192.168.1.100
 tftp> get junos-srxsme-18.2R3-S2.9.tgz
@@ -55,7 +55,7 @@ root> request system software add no-validate /var/tmp/junos-srxsme-18.2R3-S2.9.
 
 ### U 盘方式
 
-```shell
+```
 install file:///junos-srxsme-18.4R3-S2.tgz
 ```
 
@@ -69,7 +69,7 @@ install file:///junos-srxsme-18.4R3-S2.tgz
 
 ## 和备份分区同步
 
-```shell
+```
 request system snapshot slice alternate
 ```
 
@@ -77,7 +77,7 @@ request system snapshot slice alternate
 
 注意，这会格式化你的 U 盘。
 
-```shell
+```
 request system snapshot
 ```
 

@@ -8,7 +8,7 @@ tags = ["Windows", "Hyper-V"]
 
 首先我们需要获得接口的名字：
 
-```powershell
+```
 PS C:\Windows\system32> Get-VMNetworkAdapterVlan -VmName "Linux"
 
 VMName   VMNetworkAdapterName Mode     VlanList
@@ -18,13 +18,13 @@ Linux    Network Adapter      Untagged
 
 然后设置这个接口为 trunk 接口：
 
-```powershell
+```
 PS C:\Windows\system32> Set-VmNetworkAdapterVlan -VmName "Linux" -VmNetworkAdapterName "Network Adapter" -Trunk -NativeVlanId 0 -AllowedVlanIdList "1-4094"
 ```
 
 最后验证配置：
 
-```powershell
+```
 PS C:\Windows\system32> Get-VMNetworkAdapterVlan -VmName "Linux"
 
 VMName   VMNetworkAdapterName Mode  VlanList
@@ -34,7 +34,7 @@ Linux    Network Adapter      Trunk 0,1-4094
 
 如果之后要改回来，直接在 GUI 上改可能会报错。要先用 PowerShell 把接口设成 Untagged 再设置 Access：
 
-```powershell
+```
 Set-VmNetworkAdapterVlan -VmName "Linux" -VmNetworkAdapterName "Network Adapter" -Untagged
 Set-VmNetworkAdapterVlan -VmName "Linux" -VmNetworkAdapterName "Network Adapter" -Access -VlanId 100
 ```

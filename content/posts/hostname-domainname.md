@@ -6,7 +6,7 @@ tags = ["Cisco"]
 
 ## Cisco IOS，IOS XE
 
-```console
+```
 hostname <主机名>
 ip domain-name <域名>
 ```
@@ -15,7 +15,7 @@ ip domain-name <域名>
 
 ## Cisco ASA
 
-```console
+```
 hostname <主机名>
 domain-name <域名>
 ```

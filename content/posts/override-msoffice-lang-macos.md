@@ -6,7 +6,7 @@ tags = ["macOS", "Microsoft Office", "i18n"]
 
 命令行/终端里输入这样几条即可
 
-```console
+```
 defaults write com.microsoft.Excel AppleLanguages '("zh-CN")'
 defaults write com.microsoft.Word AppleLanguages '("zh-CN")'
 defaults write com.microsoft.Powerpoint AppleLanguages '("zh-CN")'

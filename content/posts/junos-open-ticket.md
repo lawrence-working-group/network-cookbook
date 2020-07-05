@@ -8,7 +8,7 @@ JunOS 开票流程如下
 
 进入系统以后，使用
 
-```shell
+```
 # 获取 "RSI" 文件
 request support information | save /var/tmp/rsi.log
 # 打包日志

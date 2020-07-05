@@ -6,7 +6,7 @@ tags = ["Cisco", "IPv6", "PPPoE", "DHCPv6-PD"]
 
 在以太网环境下，DHCPv6-PD 比较容易配置和理解，而在 PPPoE 环境中，需要在 Dialer 接口配置中添加如下指令
 
-```console
+```
 ipv6 enable
 ipv6 dhcp client pd hint ::/56
 ipv6 dhcp client pd <GENERAL_PREFIX_NAME>
@@ -16,7 +16,7 @@ ipv6 dhcp client pd <GENERAL_PREFIX_NAME>
 这个前缀名可以被分配给路由器的本地接口，但是不能以前缀名的形式分配添加路由。
 本地接口使用 IPv6 General Prefix 的配置语法如下
 
-```console
+```
 ipv6 address <GENERAL_PREFIX_NAME> 0:0:0:00A1::/64
 ```
 

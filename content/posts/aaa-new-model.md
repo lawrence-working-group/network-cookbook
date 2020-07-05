@@ -11,7 +11,7 @@ tags = ["Cisco", "AAA"]
 
 完成上述两步后，在配置模式输入以下命令：
 
-```console
+```
 aaa new-model
 aaa authentication login default local
 aaa authorization console

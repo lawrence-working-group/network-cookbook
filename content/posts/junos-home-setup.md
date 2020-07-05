@@ -10,7 +10,7 @@ tags = ["JunOS"]
 
 进入系统以后，使用
 
-```shell
+```
 request system zeroize
 ```
 
@@ -20,7 +20,7 @@ request system zeroize
 
 设备启动以后，使用默认用户名 `root` 空密码登录，然后：
 
-```shell
+```
 root@Amnestic% cli
 root@Amnestic> configure
 Entering configuration mode

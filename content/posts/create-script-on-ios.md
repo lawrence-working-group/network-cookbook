@@ -12,7 +12,7 @@ tags = ["Cisco", "TCL"]
 
 现在的配置：
 
-```console
+```
 interface GigibitEthernet0
  ip address 192.168.1.1 255.255.255.0
  ipv6 address 2001:db8::1/64
@@ -21,7 +21,7 @@ end
 
 目标配置：
 
-```console
+```
 interface GigibitEthernet0
  vrf forwarding TESTNET
  ip address 192.168.1.1 255.255.255.0
@@ -31,7 +31,7 @@ end
 
 使用 Cisco IOS 内置的 TCL 环境，在文件系统内写脚本文件。
 
-```console
+```
 tclsh
 puts [ open "flash:CHANGEVRF.CFG" w+ ] {
 interface Gi0
@@ -46,7 +46,7 @@ tclquit
 
 接下来执行上述配置脚本（与 running-config 合并）
 
-```console
+```
 copy flash:CHANGEVRF.CFG running-config
 ```
 

@@ -52,7 +52,7 @@ Traffic from this device may be redirected to other devices in the system.  Not 
 
 你依然有可能直通网卡（但是不安全）。在确定没有敏感工作负载的情况下，修改脚本如下：
 
-```powershell
+```
 $locationpath = ($pcidev | get-pnpdeviceproperty DEVPKEY_Device_LocationPaths).data[0]
 $acsUp =  ($pcidev | Get-PnpDeviceProperty $devpkey_PciDevice_AcsCompatibleUpHierarchy).Data
     if ($acsUp -eq $devprop_PciDevice_AcsCompatibleUpHierarchy_NotSupported) {
@@ -70,7 +70,7 @@ $acsUp =  ($pcidev | Get-PnpDeviceProperty $devpkey_PciDevice_AcsCompatibleUpHie
 
 在设备管理器里禁用准备直通的设备。打开 PowerShell，赋变量 `$locationpath` 为刚刚获得的 PCIe 设备路径。然后运行：
 
-```powershell
+```
 # 如果设备提供了直通用迁移驱动，那么不需要加 -Force
 # 有原生 ACS 支持的也不需要
 Dismount-VMHostAssignableDevice -LocationPath $locationpath -Force
@@ -80,7 +80,7 @@ Dismount-VMHostAssignableDevice -LocationPath $locationpath -Force
 
 赋变量 `$VmName` 为虚拟机名，然后运行：
 
-```powershell
+```
 # 直通设备的虚拟机不能被暂停或热迁移，所以自动关机动作必须为 ACPI shutdown 或者硬关机
 Set-VM -Name $VmName -AutomaticStopAction TurnOff
 
@@ -96,7 +96,7 @@ Add-VMAssignableDevice -VMName $VmName -LocationPath $locationpath
 
 关闭虚拟机。赋变量 `$locationpath` 为刚刚获得的 PCIe 设备路径，赋变量 `$VmName` 为虚拟机名，然后运行：
 
-```powershell
+```
 # 将设备从虚拟机里移除
 Remove-VMAssignableDevice -VMName $VmName -LocationPath $locationpath
 # 挂载设备回 Management OS

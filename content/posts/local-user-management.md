@@ -6,7 +6,7 @@ tags = ["Cisco", "用户管理"]
 
 ## 适用于 Cisco IOS/IOS XE
 
-```console
+```
 username <用户名> privilege 15 algorithm-type scrypt secret <用户密码>
 ```
 

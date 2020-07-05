@@ -16,7 +16,7 @@ tags = ["Cisco", "NAT", "route-map"]
 
 以下示例匹配了所有 RFC 1918 定义的内网地址空间
 
-```console
+```
 ip access-list standard rfc1918
  permit 10.0.0.0 0.255.255.255
  permit 172.0.0.0 0.31.255.255
@@ -28,7 +28,7 @@ ip access-list standard rfc1918
 
 配置针对第一个 ISP 的 route-map，其出口为 GigabitEthernet1
 
-```console
+```
 route-map NAT-toISP1 permit 10
  match ip address rfc1918
  match interface GigabitEthernet1
@@ -36,7 +36,7 @@ route-map NAT-toISP1 permit 10
 
 配置针对第二个 ISP 的 route-map，其出口为 GigabitEthernet2
 
-```console
+```
 route-map NAT-toISP2 permit 10
  match ip address rfc1918
  match interface GigabitEthernet2
@@ -44,7 +44,7 @@ route-map NAT-toISP2 permit 10
 
 ## 3. 配置针对两个出口的 NAT 地址池（可选）
 
-```console
+```
 ip nat pool ISP1-POOL 192.0.2.10 192.0.2.20 prefix-length 24
 ip nat pool ISP2-POOL 198.51.100.0 198.51.100.100 netmask 255.255.255.0
 ```
@@ -53,7 +53,7 @@ ip nat pool ISP2-POOL 198.51.100.0 198.51.100.100 netmask 255.255.255.0
 
 ## 3. 配置两条 NAT 策略
 
-```console
+```
 ip nat inside source route-map NAT-toISP1 pool ISP1-POOL overload
 ip nat inside source route-map NAT-toISP2 pool ISP2-POOL overload
 ```
