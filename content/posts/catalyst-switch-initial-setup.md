@@ -82,10 +82,10 @@ ntp server time.asia.apple.com prefer
 ```
 interface Gi1/0/1
  description uplink
+ switchport mode trunk
  switchport trunk encapsulation dot1q
  switchport trunk allowed vlan all
  switchport trunk native vlan 1
- switchport mode trunk
 ```
 
 ## VLAN access 端口
@@ -105,13 +105,9 @@ port-channel load-balance src-dst-ip
 interface Port-channel1
  switchport trunk encapsulation dot1q
  switchport mode trunk
-interface GigabitEthernet0/51
- switchport trunk encapsulation dot1q
+interface range GigabitEthernet0/51-52
  switchport mode trunk
- channel-group 1 mode active
-interface GigabitEthernet0/52
  switchport trunk encapsulation dot1q
- switchport mode trunk
  channel-group 1 mode active
 ```
 
