@@ -92,3 +92,20 @@ apboot> reset
    ***, [20.08.20 00:12]
    那玩意弄起来挺麻烦
    ```
+
+2. UART 线序定义
+
+   如果你拿到的型号是 `103` / `305` 等型号的 Aruba AP，那么的 Console 一组 UART PINOUT
+
+   按照 Console 文字方向的线序依次为：
+
+   ```
+   PIN 1 - GND
+   PIN 2 - TX
+   PIN 3 - RX
+   PIN 4 - 3.3V
+   ```
+
+   see <https://support.arubanetworks.com/Documentation/tabid/77/DMXModule/512/EntryId/25044/Default.aspx>
+
+   see <https://community.arubanetworks.com/t5/Wireless-Access/How-I-can-console-to-AP-315/td-p/312825>
