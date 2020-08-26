@@ -81,7 +81,15 @@ apboot> reset
 
 ## 备忘录
 
-1. 某位不透露姓名的 Aruba Staff 表示，建议使用 `printenv` 事先备份正常状态下的 `env` 信息。
+1. 默认密码
+
+   默认账号均为 `admin`
+
+   以 ArubaOS 8 作为分界线，以前默认密码为 `admin`，以后默认密码为本机序列号
+
+   本机序列号在在自签的证书中也有包含
+
+2. 某位不透露姓名的 Aruba Staff 表示，建议使用 `printenv` 事先备份正常状态下的 `env` 信息。
 
    原话如下：
 
@@ -93,7 +101,7 @@ apboot> reset
    那玩意弄起来挺麻烦
    ```
 
-2. UART 线序定义
+3. UART 线序定义
 
    如果你拿到的型号是 `103` / `305` 等型号的 Aruba AP，那么的 Console 一组 UART PINOUT
 
