@@ -15,7 +15,10 @@ set security nat destination rule-set default-inbound rule 1 match destination-p
 set security nat destination rule-set default-inbound rule 1 then destination-nat pool RDP-terminal-server
 ```
 
-注意 MX 系列那个 `service` 下的 NAT 规则配置能 commit，但是不会生效。
+注意事项：
+* 在 SRX 上，MX 系列那个 `service` 下的 NAT 规则配置能 commit，但是不会生效
+* Junos 收到包后会先匹配 flow 并直接应用 flow 上引用的 NAT 规则，如果匹配失败再做 NAT
+* Junos 在默认设置下，返回包的路由是在 flow 第一个包所在的 routing instance 查询的
 
 调试：
 
