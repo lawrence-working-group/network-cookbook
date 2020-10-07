@@ -19,9 +19,14 @@ set security nat destination rule-set default-inbound rule 1 then destination-na
 
 调试：
 
-[Resolution Guide – SRX - Troubleshoot Destination NAT](https://kb.juniper.net/InfoCenter/index?page=content&id=KB21839&actp=METADATA)
+首先看是否被 firewall filter 拒绝掉或者 security policy 拒绝掉，前者在相应 filter 里面加 count 语句来看，后者可以用 `show security match-policies` 测试。
 
-上面几步做完以后还是不成功的话首先[启用 flow 日志](https://kb.juniper.net/InfoCenter/index?page=content&id=KB21757&actp=METADATA)，然后在日志里面找具体匹配了哪条。如果配置了 `persistent-nat` 的话，进来的数据包会优先查找 `persistent-nat` 表，可能会匹配上不正确的 flow，从日志中可以看到。这时候首先查看相应的 persistent NAT 规则和 flow：
+然后进行 flow 建立过程调试和 NAT 过程调试：
+
+* [SRX Getting Started -- Troubleshooting Traffic Flows and Session Establishment](https://kb.juniper.net/InfoCenter/index?page=content&id=kb16110)
+* [Resolution Guide – SRX - Troubleshoot Destination NAT](https://kb.juniper.net/InfoCenter/index?page=content&id=KB21839&actp=METADATA)
+
+还是不成功的话再[启用 flow 日志](https://kb.juniper.net/InfoCenter/index?page=content&id=KB21757&actp=METADATA)，在日志里面找具体匹配了什么规则导致 flow 建立/匹配失败。如果[配置了 `persistent-nat` 的话](https://www.blackhole-networks.com/SRXNAT/snat_persist.html)，进来的数据包会优先查找 `persistent-nat` 表，可能会匹配上不正确的 flow，从日志中可以看到。这时候首先查看相应的 persistent NAT 规则和 flow：
 
 ```
 show security nat source persistent-nat-table internal-ip 192.168.1.2 internal-port 3389
