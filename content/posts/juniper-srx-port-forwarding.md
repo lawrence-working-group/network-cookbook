@@ -5,6 +5,9 @@ tags = ["JunOS"]
 +++
 
 ```
+# 如果开启了 persistent-nat，建议避开需要端口转发的端口
+set security nat source pool-default-port-range 4096 to 63487
+
 # 设置目标地址和端口号
 set security nat destination pool RDP-terminal-server address 192.168.1.2/32 port 3389
 
