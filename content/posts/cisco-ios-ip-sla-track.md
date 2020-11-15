@@ -67,13 +67,16 @@ Cisco IOS 和 IOS XE 作为最普及的路由器和交换机操作系统，内�
 - 配置调用上述 IP SLA 测试结果的 Tracking
   1. track 1 状态与 IP SLA 测试 1 联动
   1. track 2 状态与 IP SLA 测试 2 联动
+  1. 在跟踪的 IP SLA 变为 DOWN 之后 31 秒内不改变 track 自身状态，如果这段等待期内 IP SLA 变为 UP，track 状态不会震荡。同理，若 track 从 DOWN 状态恢复，需要等待 61 秒内没有 IP SLA DOWN 的事件。
   1. track 3 状态取决于前两个跟踪目标（可以配置更多），如果小于 24% 则判为无效，如果大于 49% 则判为有效。在只配置了两个 object 的情况下，一个 object 状态为 UP，则贡献 50%，整体判为有效。
   1. track 10 的状态与 ISP-A 这个 VRF 的路由表中是否存在默认路由联动
   1. track 11 的状态与 track 10 状态相反
   ```
   track 1 ip sla 1
+   delay down 31 up 61
   !
   track 2 ip sla 2
+   delay down 31 up 61
   !
   track 3 list threshold percentage
    object 1
@@ -90,7 +93,7 @@ Cisco IOS 和 IOS XE 作为最普及的路由器和交换机操作系统，内�
 - 配置与上述 track 联动的静态路由
   1. 两个被测试地址的主机路由与默认路由的相反状态关联，即存在默认路由时，这两条主机路由不会被安装。
   1. 默认路由与链路可用性关联，即可以到达两个被测试地址时，安装默认路由。
-  1. 以上配置不会形成震荡的原因是，两个被测试地址可以通过默认路由离开本路由器。
+  1. 以下配置不会形成震荡的原因是，两个被测试地址可以通过默认路由离开本路由器。
   ```
   ip route vrf ISP-A 198.51.100.1 255.255.255.255 192.0.2.1 name TESTNET-1 track 11
   ip route vrf ISP-A 203.0.113.1 255.255.255.255 192.0.2.1 name TESTNET-2 track 11
