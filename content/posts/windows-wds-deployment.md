@@ -13,7 +13,7 @@ tags = ["Windows", "PXE", "WDS", "Deployment"]
 1. 安装 Windows Deployment Services Role，该 Role 的所有功能勾选。
 2. 进入 Windows Deployment Services 管理界面，初始化服务器，选择 Standalone 模式。
 3. 设置安装库目录。最好不要选系统盘。
-4. 选择 Respond to all client computers。如果你有~~白名单~~许可名单的需求，你也可以选择 Respond only to known client computers 或者勾选下面的 Admin Approval。
+4. 选择 Respond to all client computers。如果你有 ~~白名单~~ 许可名单的需求，你也可以选择 Respond only to known client computers 或者勾选下面的 Admin Approval。
 5. 如果开放给所有机器安装（即不需要认证），可以考虑启用 SMB 匿名共享并检查 `REMINST` 共享的权限配置。
 
 ## 添加镜像
