@@ -53,7 +53,7 @@ upgrade        - upgrade the APBoot or OS image
 version        - display version
 ```
 
-请在 2 sec 以内按下 <kbd>Enter</kbd> 进入 APBoot 模式
+请在 2 秒以内按下 <kbd>Enter</kbd> 进入 APBoot 模式
 
 ## 升级固件
 
@@ -85,9 +85,9 @@ apboot> reset
 
    默认账号均为 `admin`
 
-   以 ArubaOS 8 作为分界线，以前默认密码为 `admin`，以后默认密码为本机序列号
+   以 ArubaOS 8 作为分界线，在此之前默认密码为 `admin`，以后默认密码为本机序列号
 
-   本机序列号在在自签的证书中也有包含
+   （本机序列号在在自签的证书中也有包含）
 
 2. 某位不透露姓名的 Aruba Staff 表示，建议使用 `printenv` 事先备份正常状态下的 `env` 信息。
 
@@ -103,17 +103,4 @@ apboot> reset
 
 3. UART 线序定义
 
-   如果你拿到的型号是 `103` / `305` 等型号的 Aruba AP，那么的 Console 一组 UART PINOUT
-
-   按照 Console 文字方向的线序依次为：
-
-   ```
-   PIN 1 - GND
-   PIN 2 - TX
-   PIN 3 - RX
-   PIN 4 - 3.3V
-   ```
-
-   see <https://support.arubanetworks.com/Documentation/tabid/77/DMXModule/512/EntryId/25044/Default.aspx>
-
-   see <https://community.arubanetworks.com/t5/Wireless-Access/How-I-can-console-to-AP-315/td-p/312825>
+   <https://networkcookbook.com/2021/05/aruba-console/>
