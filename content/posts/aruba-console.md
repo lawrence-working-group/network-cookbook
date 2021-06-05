@@ -28,12 +28,12 @@ tags = ["HPE", "Aruba"]
 
 线序依次为
 
-| #PIN | Name |
-| ---: | ---- |
-|    1 | 3.3V |
-|    2 | TX   |
-|    3 | RX   |
-|    4 | GND  |
-|    5 | GND  |
+| #PIN | USB# | Aruba# |
+| ---: | ---- | ------ |
+|    1 | VCC  | 3.3V   |
+|    2 | D-   | TX     |
+|    3 | D+   | RX     |
+|    4 | ID   | NC     |
+|    5 | GND  | GND    |
 
 - <https://support.arubanetworks.com/Documentation/tabid/77/DMXModule/512/Command/Core_Download/Default.aspx?EntryId=25048>
