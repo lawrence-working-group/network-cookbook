@@ -16,6 +16,16 @@ set security nat destination rule-set default-inbound from interface pp0.0 # or 
 set security nat destination rule-set default-inbound rule 1 match destination-address 0.0.0.0/0
 set security nat destination rule-set default-inbound rule 1 match destination-port 3389
 set security nat destination rule-set default-inbound rule 1 then destination-nat pool RDP-terminal-server
+
+TL;DR，若要转发多个端口（一个范围），可参考以下配置
+
+# 设置转发的目标地址
+set security nat destination pool RDP-terminal-server 192.168.1.2/32
+
+# 设置转发端口范围及规则
+set security nat destination rule-set default-inbound rule port-forward-range match destination-address <Your Public IP Address>
+set security nat destination rule-set default-inbound rule port-forward-range match destination-port 10000 to 20000
+set security nat destination rule-set default-inbound rule port-forward-range then destination-nat pool RDP-terminal-server
 ```
 
 注意事项：
