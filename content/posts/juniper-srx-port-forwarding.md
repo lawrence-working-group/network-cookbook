@@ -23,7 +23,7 @@ TL;DR，若要转发多个端口（一个范围），可参考以下配置
 set security nat destination pool RDP-terminal-server 192.168.1.2/32
 
 # 设置转发端口范围及规则
-set security nat destination rule-set default-inbound rule port-forward-range match destination-address <Your Public IP Address>
+set security nat destination rule-set default-inbound rule port-forward-range match destination-address 0.0.0.0/0
 set security nat destination rule-set default-inbound rule port-forward-range match destination-port 10000 to 20000
 set security nat destination rule-set default-inbound rule port-forward-range then destination-nat pool RDP-terminal-server
 ```
