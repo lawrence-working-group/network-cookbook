@@ -152,7 +152,10 @@ set interfaces pp0 unit 0 pppoe-options ignore-eol-tag
 set interfaces pp0 unit 0 family inet mtu 1492
 set interfaces pp0 unit 0 family inet negotiate-address
 set routing-options static route 0.0.0.0/0 next-hop pp0.0
-set security flow tcp-mss all-tcp mss 1452
+# IPv4 Only
+#set security flow tcp-mss all-tcp mss 1452
+# IPv4 and IPv6
+set security flow tcp-mss all-tcp mss 1432
 set security zones security-zone untrust interfaces ge-0/0/0.0
 set security zones security-zone untrust interfaces pp0.0
 
